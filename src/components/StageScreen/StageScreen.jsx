@@ -8,8 +8,8 @@ const StageScreen = ({ setStage, setLoading }) => {
     }
 
     return (
-        <div>
-            <h2>Select a difficulty</h2>
+        <dialog open>
+            <h2>Select A Stage</h2>
 
             <ul>
                 <li onClick={() => configureGame('grassland')}>Grassland</li>
@@ -21,7 +21,7 @@ const StageScreen = ({ setStage, setLoading }) => {
                 <li onClick={() => configureGame('urban')}>Urban</li>
                 <li onClick={() => configureGame('rare')}>Rare</li>
             </ul>
-        </div>
+        </dialog>
     )
 }
 

@@ -1,0 +1,35 @@
+
+.game-container {
+
+    .score-container {
+        display: flex;
+        gap: 4rem;
+        justify-content: center;
+        margin-top: 2rem;
+        
+        .score, .high-score {
+            font-size: 1.5rem;
+        }
+    }
+
+    .cards-container {
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 4rem;
+    
+        .card {
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            cursor: pointer;
+        }
+        
+    }
+}
