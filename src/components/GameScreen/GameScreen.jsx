@@ -5,7 +5,18 @@ const GameScreen = ({ pokemonData, setGameCondition }) => {
     const [selected, setSelected] = useState([]);
     const [score, setScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
-    const [shuffledData, setShuffledData] = useState([]);
+    const [cards, setCards] = useState([]);
+
+    const shuffleCards = () => {
+        const shuffledList = [...pokemonData].sort(() => 0.5 - Math.random());
+        setCards(shuffledList);
+    }
+
+    useEffect(() => {
+        if (pokemonData.length > 0) {
+            shuffleCards();
+        }
+    }, [pokemonData]);
 
     // Update high score when score changes
     useEffect(() => {
@@ -19,8 +30,10 @@ const GameScreen = ({ pokemonData, setGameCondition }) => {
         if (!selected.includes(id)) {
             setSelected(prevSelected => [...prevSelected, id]);
             setScore(prevScore => prevScore + 1);
+            shuffleCards();
         }
     };
+
 
     return (
         <div className="game-container">
@@ -30,7 +43,7 @@ const GameScreen = ({ pokemonData, setGameCondition }) => {
             </div>
 
             <div className="cards-container">
-                {pokemonData.map(pokemon => (
+                {cards.map(pokemon => (
                     <div key={pokemon.id} onClick={() => handleMatch(pokemon.id)} className="card">
                         <img src={pokemon.frontImage} alt="pokemon image" />
                         <h3>{pokemon.name}</h3>
