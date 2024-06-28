@@ -19,7 +19,6 @@ const StageScreen = ({ setStage, setLoading }) => {
                 <li onClick={() => configureGame('mountain')}>Mountain</li>
                 <li onClick={() => configureGame('rough-terrain')}>Rough Terrain</li>
                 <li onClick={() => configureGame('urban')}>Urban</li>
-                <li onClick={() => configureGame('rare')}>Rare</li>
             </ul>
         </dialog>
     )

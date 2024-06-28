@@ -1,0 +1,41 @@
+.endModal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2rem;
+    padding: 1.5rem 5rem;
+
+
+    h2 {
+        margin: 0;
+        letter-spacing: .2rem;
+    }
+
+    img {
+        max-width: 200px;
+    }
+
+    p {
+        font-size: 1.5rem;
+        letter-spacing: .1rem;
+
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    button {
+        font-size: 1.4rem;
+        border: none;
+        background-color: transparent;
+        margin-top: 1rem;
+        cursor: pointer;
+    }
+
+    button:hover  {
+        transform: scale(1.05);
+        transition: .2s;
+    }
+}

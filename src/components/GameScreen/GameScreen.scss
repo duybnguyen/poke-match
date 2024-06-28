@@ -14,7 +14,7 @@
 
     .cards-container {
         position: fixed;
-        top: 40%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
         display: grid;
@@ -23,13 +23,27 @@
     
         .card {
             border: 2px solid black;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
             padding: 1rem;
             cursor: pointer;
+
+            .card-front {
+                display: flex;
+                gap: 1rem;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                h3 {
+                    font-size: 1.4rem;
+                }
+            }
         }
         
+    }
+}
+
+@media (max-width: 1000px) {
+    .cards-container {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
